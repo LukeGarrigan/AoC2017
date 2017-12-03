@@ -1,6 +1,6 @@
 # AOC2017
 
-A repository for hopefully all answers to [http://adventofcode.com/2017][Advent Of Code] questions!
+A repository for hopefully all answers to [Advent Of Code](http://adventofcode.com/2017) questions!
 - [x] --- Day 1: Inverse Captcha ---
 
 - [x] --- Part Two ---
