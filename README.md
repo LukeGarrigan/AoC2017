@@ -1,10 +1,11 @@
 # AOC2017
 
---- Day 1: Inverse Captcha ---
+- [x] --- Day 1: Inverse Captcha ---
 
---- Part Two ---
+- [x] --- Part Two ---
 
---- Day 2: Corruption Checksum ---
 
---- Part Two ---
+- [x] --- Day 2: Corruption Checksum ---
+
+- [x] --- Part Two ---
 
