@@ -44,7 +44,7 @@ public class Main {
 
     }
 
-    
+
 
 
     private static int[][] createSpiralArray(int perfectSquare) {
