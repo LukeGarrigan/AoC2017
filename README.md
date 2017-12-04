@@ -12,3 +12,5 @@ A repository for hopefully all answers to [Advent Of Code](http://adventofcode.c
 ----
 - [x] Day 3: Spiral Memory  
 
+----
+- [x] Day 4: High-Entropy Passphrases
