@@ -522,7 +522,6 @@ public class Main {
                 "xzvfbf fopmfxu mvftgr mfupoxf coyhof talcc vpkslo";
 
 
-
         String inputTwo = "vxjtwn vjnxtw sxibvv mmws wjvtxn icawnd rprh\n" +
                 "fhaa qwy vqbq gsswej lxr yzl wakcige mwjrl\n" +
                 "bhnlow huqa gtbjc gvj wrkyr jgvmhj bgs umo ikbpdto\n" +
@@ -1037,17 +1036,8 @@ public class Main {
                 "xzvfbf fopmfxu mvftgr mfupoxf coyhof talcc vpkslo";
         System.out.println(countValidPasswordsPartOne(input));
 
+
         System.out.println(countValidPasswordsPartTwo(inputTwo));
-
-
-        String[] test1 = {"abcde", "fghij"};
-        String[] test2 = {"abcde", "xyz" ,"ecdab"};
-        String[] test3 = {"a" , "ab" ,"abc" ,"abd" ,"abf", "abj"};
-        String[] test4 = {"iiii","oiii", "ooii", "oooi" ,"oooo"};
-        System.out.println(isValidPasswordTwo(test1));
-        System.out.println(isValidPasswordTwo(test2));
-        System.out.println(isValidPasswordTwo(test3));
-        System.out.println(isValidPasswordTwo(test4));
 
 
     }
@@ -1069,14 +1059,14 @@ public class Main {
     }
 
     private static boolean isValidPasswordTwo(String[] password) {
-        HashMap<Character,Integer> characterIntegerHashMap = getValueForLetterMap();
+        HashMap<Character, Integer> characterIntegerHashMap = getValueForLetterMap();
 
         ArrayList<Integer> sums = new ArrayList<>();
         for (String s : password) {
 
             // loop through the characters
             int total = 0;
-            for(int i=0; i< s.length();i++){
+            for (int i = 0; i < s.length(); i++) {
                 int val = characterIntegerHashMap.get(s.charAt(i));
                 total = total + val;
             }
@@ -1090,14 +1080,25 @@ public class Main {
         return true;
     }
 
-    private static HashMap<Character,Integer> getValueForLetterMap() {
+    private static boolean isPrimeNumber(int number) {
+
+        for (int i = 2; i <= number / 2; i++) {
+
+            if (number % 2 == 0) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    private static HashMap<Character, Integer> getValueForLetterMap() {
         char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         ArrayList<Integer> primeNumbers = getPrimeNumbersUpTo(alphabet.length);
 
 
-
-        HashMap<Character,Integer> valueMap = new HashMap<>();
-        for(int i=0; i< alphabet.length;i++){
+        HashMap<Character, Integer> valueMap = new HashMap<>();
+        for (int i = 0; i < alphabet.length; i++) {
             valueMap.put(alphabet[i], primeNumbers.get(i));
         }
 
@@ -1107,21 +1108,14 @@ public class Main {
     private static ArrayList<Integer> getPrimeNumbersUpTo(int length) {
 
         ArrayList<Integer> primeNumberList = new ArrayList<>();
-
-        int number = 3;
-        while (primeNumberList.size() < length) {
-
-            for (int i = 2; i <= number; i++) {
-                // its not a prime number
-                if (i == number) {
-                    primeNumberList.add(number);
-                    number++;
-                    break;
-                } else if (number % i == 0) {
-                    number++;
+        for (int i = 3; i < Integer.MAX_VALUE; i++) {
+            if (isPrimeNumber(i)) {
+                primeNumberList.add(i);
+                if (primeNumberList.size() >= length) {
                     break;
                 }
             }
+
         }
         return primeNumberList;
 
