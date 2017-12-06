@@ -23,6 +23,6 @@ A repository for hopefully all answers to [Advent Of Code](http://adventofcode.c
 
 ----
 
-- [x] Day 6: Memory Reallocation ---
+- [x] Day 6: Memory Reallocation 
 
 
