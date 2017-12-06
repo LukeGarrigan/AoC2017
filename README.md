@@ -19,7 +19,7 @@ A repository for hopefully all answers to [Advent Of Code](http://adventofcode.c
 
 ----
 
-- [] Day 5: A Maze of Twisty Trampolines, All Alike
+//TODO Day 5: A Maze of Twisty Trampolines, All Alike
 
 ----
 
