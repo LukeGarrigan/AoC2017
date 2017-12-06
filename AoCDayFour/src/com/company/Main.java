@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 
 public class Main {
 
@@ -1059,22 +1059,15 @@ public class Main {
     }
 
     private static boolean isValidPasswordTwo(String[] password) {
-        HashMap<Character, Integer> characterIntegerHashMap = getValueForLetterMap();
-
-        ArrayList<Integer> sums = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
         for (String s : password) {
-
-            // loop through the characters
-            int total = 0;
-            for (int i = 0; i < s.length(); i++) {
-                int val = characterIntegerHashMap.get(s.charAt(i));
-                total = total + val;
-            }
-
-            if (sums.contains(total)) {
+            char[] ar = s.toCharArray();
+            Arrays.sort(ar);
+            String newSortedString = Arrays.toString(ar);
+            if (list.contains(newSortedString)) {
                 return false;
             } else {
-                sums.add(total);
+                list.add(newSortedString);
             }
         }
         return true;
@@ -1089,35 +1082,6 @@ public class Main {
             }
         }
         return true;
-
-    }
-
-    private static HashMap<Character, Integer> getValueForLetterMap() {
-        char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        ArrayList<Integer> primeNumbers = getPrimeNumbersUpTo(alphabet.length);
-
-
-        HashMap<Character, Integer> valueMap = new HashMap<>();
-        for (int i = 0; i < alphabet.length; i++) {
-            valueMap.put(alphabet[i], primeNumbers.get(i));
-        }
-
-        return valueMap;
-    }
-
-    private static ArrayList<Integer> getPrimeNumbersUpTo(int length) {
-
-        ArrayList<Integer> primeNumberList = new ArrayList<>();
-        for (int i = 3; i < Integer.MAX_VALUE; i++) {
-            if (isPrimeNumber(i)) {
-                primeNumberList.add(i);
-                if (primeNumberList.size() >= length) {
-                    break;
-                }
-            }
-
-        }
-        return primeNumberList;
 
     }
 
