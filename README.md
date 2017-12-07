@@ -16,3 +16,13 @@ A repository for hopefully all answers to [Advent Of Code](http://adventofcode.c
 - [x] Day 4: High-Entropy Passphrases
 
 - [x] Part Two
+
+----
+
+//TODO Day 5: A Maze of Twisty Trampolines, All Alike
+
+----
+
+- [x] Day 6: Memory Reallocation 
+
+
