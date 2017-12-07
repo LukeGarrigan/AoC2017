@@ -19,10 +19,15 @@ A repository for hopefully all answers to [Advent Of Code](http://adventofcode.c
 
 ----
 
-//TODO Day 5: A Maze of Twisty Trampolines, All Alike
+- [x] Day 5: A Maze of Twisty Trampolines, All Alike
 
+- [x] Part One
 ----
 
 - [x] Day 6: Memory Reallocation 
+
+----
+
+//TODO Day 7: Recursive Circus
 
 
