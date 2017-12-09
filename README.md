@@ -21,7 +21,7 @@ A repository for hopefully all answers to [Advent Of Code](http://adventofcode.c
 
 - [x] Day 5: A Maze of Twisty Trampolines, All Alike
 
-- [x] Part One
+- [x] Part Two
 ----
 
 - [x] Day 6: Memory Reallocation 
@@ -30,4 +30,9 @@ A repository for hopefully all answers to [Advent Of Code](http://adventofcode.c
 
 //TODO Day 7: Recursive Circus
 
+----
+
+- [x] Day 8: I Heard You Like Registers
+
+- [x] Part Two
 
