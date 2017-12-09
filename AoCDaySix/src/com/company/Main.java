@@ -14,7 +14,7 @@ public class Main {
 
         // find biggest number
 
-        System.out.println(solvePartOne(input2));
+        System.out.println(solvePartOne(input));
 
     }
 
@@ -26,6 +26,7 @@ public class Main {
         while (true) {
             Integer[] newArray = doMemoryAllocation(input);
             if (inputs.stream().anyMatch(a -> Arrays.equals(a, newArray))) {
+
                 break;
             }
             count++;
@@ -34,6 +35,25 @@ public class Main {
             input = newArray.clone();
         }
         return count;
+    }
+
+    private static int solvePartTwo(Integer[] input) {
+        List<Integer[]> inputs = new ArrayList<>();
+        inputs.add(input);
+
+        int count = 1;
+        while (true) {
+            Integer[] newArray = doMemoryAllocation(input);
+            if (inputs.stream().anyMatch(a -> Arrays.equals(a, newArray))) {
+                System.out.println(count);
+                inputs = new ArrayList<>();
+                count =0;
+            }
+            count++;
+            inputs.add(newArray);
+            //System.out.println(Arrays.toString(input));
+            input = newArray.clone();
+        }
     }
 
     private static Integer[] doMemoryAllocation(Integer[] array) {
