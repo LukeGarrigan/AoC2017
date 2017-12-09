@@ -10,7 +10,9 @@ A repository for hopefully all answers to [Advent Of Code](http://adventofcode.c
 - [x] Part Two
 
 ----
-- [x] Day 3: Spiral Memory  
+- [x] Day 3: Spiral Memory 
+
+- [x] Part Two
 
 ----
 - [x] Day 4: High-Entropy Passphrases
