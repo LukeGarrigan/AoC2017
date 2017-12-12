@@ -8,14 +8,15 @@ public class Main {
         // write your code here
 
         // tried 37430
+        // tried 22952
         // too high
-        int[] arr = new int[256];
-       // int[] arr = new int[5];
+       int[] arr = new int[256];
+        //int[] arr = new int[5];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i;
         }
         int[] inputLengths = {199,0,255,136,174,254,227,16,51,85,1,2,22,17,7,192};
-        //int[] inputLengths = {3,4,1,5,7,1255};
+       // int[] inputLengths = {3, 4, 1, 5};
         int currentPos = 0;
         int skipSize = 0;
         int arrayLength = arr.length;
@@ -24,11 +25,12 @@ public class Main {
         for (int i = 0; i < inputLengths.length; i++) {
             int endPos = (currentPos + inputLengths[i]) % arrayLength;
             arr = reverseArray(arr, currentPos, endPos);
-            currentPos = (currentPos + inputLengths[i] + skipSize) % arrayLength;
+            currentPos = (currentPos   +inputLengths[i] + skipSize) % arrayLength;
             skipSize++;
-            System.out.println(Arrays.toString(arr));
+
         }
 
+        System.out.println(Arrays.toString(arr));
         System.out.println("Multiplication : " + arr[0] * arr[1]);
 
     }
@@ -37,17 +39,19 @@ public class Main {
         // find the distance between the currentPos and the endPos
         // theres probably a nice mathematical equation for this
         int distance = 0;
-        if (currentPos == endPos) {
+
+        if(endPos==currentPos){
             distance = arr.length;
-        } else {
-            for (int i = currentPos; i != endPos; i++) {
-                i = i % arr.length;
-                if (i == endPos) {
+        }else{
+            for(int i=0 ;i<arr.length;i++){
+                i = (currentPos +i) % arr.length;
+                if(i == endPos){
                     break;
                 }
-                distance++;
+                distance ++;
             }
         }
+
 
 
         // creating the sub array
@@ -67,11 +71,12 @@ public class Main {
 
 
         // plugging the sub array back into the main array
-        for(int i =0; i< subArr.length; i++){
-            arr[(i+ currentPos) % arr.length] = subArr[i];
+        for (int i = 0; i < subArr.length; i++) {
+            arr[(i + currentPos) % arr.length] = subArr[i];
         }
 
         return arr;
 
     }
+
 }
